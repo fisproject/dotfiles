@@ -1,0 +1,12 @@
+[color]
+		ui = auto
+[merge]
+		conflictstyle = diff3
+[user]
+		name = ttsy
+[core]
+		editor = vim
+[alias]
+		co = checkout
+		cm = commit
+		stat = status
