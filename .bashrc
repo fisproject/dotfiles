@@ -1,4 +1,9 @@
 # ----------------------
+# Input
+# ----------------------
+echo "set completion-ignore-case on" > ~/.inputrc
+
+# ----------------------
 # Alias
 # ----------------------
 . .http_status_alias.bash
@@ -182,7 +187,6 @@ PS1+="${style_chars}\$ \[${RESET}\]" # $ (and reset color)
 # ----------------------
 # PATH
 # ----------------------
-
 PATH="/opt/mv_pro_5.0/montavista/pro/bin:$PATH"
 PATH=/usr/local/sbin:$PATH; export PATH
 # spark path
