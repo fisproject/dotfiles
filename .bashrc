@@ -12,7 +12,7 @@ echo "set completion-ignore-case on" > ~/.inputrc
 # Other alias
 alias findn='find . -name'
 alias diff='diff -u'
-alias df='df -h'
+alias df='df -Th'
 alias py='python'
 # Some more ls aliases
 alias ll='ls -alF'
@@ -194,21 +194,22 @@ PATH=/usr/local/share/spark/bin:$PATH; export PATH
 # cabal path (building and packaging Haskell libraries and programs)
 PATH=~/.cabal/bin:$PATH; export PATH
 
-# set env for golang.
 if [ `uname` = "Darwin" ]; then
+    alias df='df -h'
+    # golang  env for osx 
     export GOPATH=~/.golang1.4.1
     export GOROOT=/usr/local/Cellar/go/1.4.1/libexec
     export PATH=$PATH:$GOROOT/bin
     export PATH=$PATH:$GOPATH/bin
 elif [ -e /etc/debian_version ]; then
-    #debian
+    # golang env for debian
     export GOPATH=/usr/bin
     export GOROOT=/root/go
     export GOARCH=arm
     export GOOS=linux
     export PATH=$PATH:$GOROOT/bin
 elif [ `uname` = "Linux" ]; then
-    #Linux
+    # other Linux
     echo "using linux"
 fi
 
