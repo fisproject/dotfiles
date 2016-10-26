@@ -196,9 +196,9 @@ PATH=~/.cabal/bin:$PATH; export PATH
 
 if [ `uname` = "Darwin" ]; then
     alias df='df -h'
-    # golang  env for osx 
-    export GOPATH=~/.golang1.4.1
-    export GOROOT=/usr/local/Cellar/go/1.4.1/libexec
+    # golang  env for osx
+    export GOPATH=~/.golang1.6.3
+    export GOROOT=/usr/local/Cellar/go/1.6.3/libexec
     export PATH=$PATH:$GOROOT/bin
     export PATH=$PATH:$GOPATH/bin
 elif [ -e /etc/debian_version ]; then
@@ -222,5 +222,5 @@ fi
 
 if [ -e ~/.nvm/nvm.sh ]; then
     source ~/.nvm/nvm.sh
-    nvm use 0.12.0
+    nvm use 6.2.0
 fi

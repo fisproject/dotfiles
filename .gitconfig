@@ -3,7 +3,8 @@
 [merge]
 		conflictstyle = diff3
 [user]
-		name = ttsy
+	name = ttsy
+	email = japan.t.egawa@gmail.com
 [core]
 		editor = vim
 [alias]
