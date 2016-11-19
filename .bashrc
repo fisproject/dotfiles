@@ -189,6 +189,7 @@ PS1+="${style_chars}\$ \[${RESET}\]" # $ (and reset color)
 # ----------------------
 PATH="/opt/mv_pro_5.0/montavista/pro/bin:$PATH"
 PATH=/usr/local/sbin:$PATH; export PATH
+PATH=/usr/local/bin:$PATH; export PATH
 # spark path
 PATH=/usr/local/share/spark/bin:$PATH; export PATH
 # cabal path (building and packaging Haskell libraries and programs)

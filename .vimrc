@@ -115,3 +115,9 @@ if &term =~ "xterm"
 
     inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
 endif
+
+"---------------------------------------------------------
+" Yank to Clipboard
+"---------------------------------------------------------
+set clipboard=unnamed,autoselect
+set backspace=indent,eol,start
