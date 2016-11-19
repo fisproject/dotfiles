@@ -18,6 +18,7 @@ alias findn='find . -name'
 alias diff='diff -u'
 alias df='df -Th'
 alias py='python'
+
 # Some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -191,23 +192,30 @@ PS1+="${style_chars}\$ \[${RESET}\]" # $ (and reset color)
 # ----------------------
 # PATH
 # ----------------------
-PATH="/opt/mv_pro_5.0/montavista/pro/bin:$PATH"
-PATH=/usr/local/sbin:$PATH; export PATH
-PATH=/usr/local/bin:$PATH; export PATH
-# spark path
-PATH=/usr/local/share/spark/bin:$PATH; export PATH
-# cabal path (building and packaging Haskell libraries and programs)
-PATH=~/.cabal/bin:$PATH; export PATH
+export PATH=/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:$PATH
 
+# Spark
+export PATH=/usr/local/share/spark/bin:$PATH
+
+# Cabal (building and packaging Haskell libraries and programs)
+export PATH=~/.cabal/bin:$PATH
+
+# Python
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+eval "$(pyenv init -)"
+
+# Golang
 if [ `uname` = "Darwin" ]; then
     alias df='df -h'
-    # golang  env for osx
+    # for osx
     export GOPATH=~/.golang1.7
     export GOROOT=/usr/local/Cellar/go/1.7/libexec
     export PATH=$PATH:$GOROOT/bin
     export PATH=$PATH:$GOPATH/bin
 elif [ -e /etc/debian_version ]; then
-    # golang env for debian
+    # for debian
     export GOPATH=/usr/bin
     export GOROOT=/root/go
     export GOARCH=arm
@@ -225,6 +233,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# Node
 if [ -e ~/.nvm/nvm.sh ]; then
     source ~/.nvm/nvm.sh
     nvm use 6.2.0
