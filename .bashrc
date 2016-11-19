@@ -4,10 +4,14 @@
 echo "set completion-ignore-case on" > ~/.inputrc
 
 # ----------------------
-# Alias
+# Load Alias
 # ----------------------
-. .http_status_alias.bash
-. .git_alias.bash
+if [ -e .http_status_alias.bash ]; then
+    . .http_status_alias.bash
+fi
+if [ -e .git_alias.bash ]; then
+    . .git_alias.bash
+fi
 
 # Other alias
 alias findn='find . -name'
@@ -198,8 +202,8 @@ PATH=~/.cabal/bin:$PATH; export PATH
 if [ `uname` = "Darwin" ]; then
     alias df='df -h'
     # golang  env for osx
-    export GOPATH=~/.golang1.6.3
-    export GOROOT=/usr/local/Cellar/go/1.6.3/libexec
+    export GOPATH=~/.golang1.7
+    export GOROOT=/usr/local/Cellar/go/1.7/libexec
     export PATH=$PATH:$GOROOT/bin
     export PATH=$PATH:$GOPATH/bin
 elif [ -e /etc/debian_version ]; then
