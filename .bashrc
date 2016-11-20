@@ -210,17 +210,18 @@ eval "$(pyenv init -)"
 if [ `uname` = "Darwin" ]; then
     alias df='df -h'
     # for osx
-    export GOPATH=~/.golang1.7
+    export GOPATH=$HOME/dev
     export GOROOT=/usr/local/Cellar/go/1.7/libexec
     export PATH=$PATH:$GOROOT/bin
     export PATH=$PATH:$GOPATH/bin
 elif [ -e /etc/debian_version ]; then
     # for debian
-    export GOPATH=/usr/bin
+    export GOPATH=$HOME/dev
     export GOROOT=/root/go
     export GOARCH=arm
     export GOOS=linux
     export PATH=$PATH:$GOROOT/bin
+    export PATH=$PATH:$GOPATH/bin
 elif [ `uname` = "Linux" ]; then
     # other Linux
     echo "using linux"
