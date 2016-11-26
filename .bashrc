@@ -9,8 +9,13 @@ echo "set completion-ignore-case on" > ~/.inputrc
 if [ -e .http_status_alias.bash ]; then
     . .http_status_alias.bash
 fi
+
 if [ -e .git_alias.bash ]; then
     . .git_alias.bash
+fi
+
+if [ -e .spark_hadoop_env.bash ]; then
+    . .spark_hadoop_env.bash
 fi
 
 # Other alias
