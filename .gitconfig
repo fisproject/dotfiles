@@ -1,13 +1,18 @@
 [color]
-		ui = auto
+	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
 [merge]
-		conflictstyle = diff3
+	conflictstyle = diff3
 [user]
-	name = ttsy
+    name = ttsy
 	email = japan.t.egawa@gmail.com
 [core]
-		editor = vim
+	editor = vim -c \"set fenc=utf-8\"
+	precomposeunicode = true
+	quotepath = false
 [alias]
-		co = checkout
-		cm = commit
-		stat = status
+	co = checkout
+	cm = commit
+	st = status
