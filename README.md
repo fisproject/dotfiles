@@ -2,7 +2,6 @@ dotfiles
 ====
 
 ## Overview
-```bash
 - .bashrc
 - .gitconfig
 - .vimrc
@@ -10,7 +9,6 @@ dotfiles
 - .http_status_alias.bash
 - .git_alias.bash
 - .spark_hadoop_env.bash
-```
 
 ## Install
 ```bash
