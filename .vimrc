@@ -121,3 +121,7 @@ endif
 "---------------------------------------------------------
 set clipboard=unnamed,autoselect
 set backspace=indent,eol,start
+" No Yank
+nnoremap x "_x
+nnoremap d "_d
+nnoremap D "_D
