@@ -125,3 +125,11 @@ set backspace=indent,eol,start
 nnoremap x "_x
 nnoremap d "_d
 nnoremap D "_D
+
+"---------------------------------------------------------
+" Auto Complete
+"---------------------------------------------------------
+set completeopt=menuone
+for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
+  exec "imap <expr> " . k . " pumvisible() ? '" . k . "' : '" . k . "\<C-X>\<C-P>\<C-N>'"
+endfor
