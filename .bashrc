@@ -49,7 +49,7 @@ bind -x '"\C-r": peco-select-history'
 # peco + cd
 function peco-cd {
     local dir="$( find . -maxdepth 1 -type d | sed -e 's;\./;;' | peco )"
-    if [ ! -z "$dir" ] ; then
+    if [ ! -z "$dir" ]; then
         cd "$dir"
     fi
 }
@@ -57,8 +57,7 @@ alias pcd="peco-cd"
 
 # peco + pkill
 function peco-pkill() {
-    for pid in `ps aux | peco | awk '{ print $2 }'`
-    do
+    for pid in `ps aux | peco | awk '{ print $2 }'`; do
         kill $pid
         echo "Killed ${pid}"
     done
@@ -214,7 +213,7 @@ eval "$(pyenv init -)"
 # Golang
 if [ `uname` = "Darwin" ]; then
     alias df='df -h'
-    # for osx
+    # for macOS
     export GOPATH=$HOME/dev
     export GOROOT=/usr/local/Cellar/go/1.7/libexec
     export PATH=$PATH:$GOROOT/bin
@@ -228,7 +227,6 @@ elif [ -e /etc/debian_version ]; then
     export PATH=$PATH:$GOROOT/bin
     export PATH=$PATH:$GOPATH/bin
 elif [ `uname` = "Linux" ]; then
-    # other Linux
     echo "using linux"
 fi
 
