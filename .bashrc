@@ -242,3 +242,7 @@ if [ -e ~/.nvm/nvm.sh ]; then
     source ~/.nvm/nvm.sh
     nvm use 6.2.0
 fi
+
+if [[ ! $TERM =~ screen ]]; then
+    exec tmux
+fi
