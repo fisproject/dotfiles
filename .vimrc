@@ -129,7 +129,7 @@ nnoremap D "_D
 "---------------------------------------------------------
 " Auto Complete
 "---------------------------------------------------------
-set completeopt=menuone
-for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
-  exec "imap <expr> " . k . " pumvisible() ? '" . k . "' : '" . k . "\<C-X>\<C-P>\<C-N>'"
-endfor
+" Use neocomplete. (vim --version | grep lua; +lua)
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
