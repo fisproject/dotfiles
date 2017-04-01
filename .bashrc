@@ -41,7 +41,7 @@ peco-select-history() {
     READLINE_POINT=${#l}
     # for OSX
     if [ `uname` = "Darwin" ]; then
-        ${READLINE_LINE}
+        echo ${READLINE_LINE} | pbcopy
     fi
 }
 bind -x '"\C-r": peco-select-history'
