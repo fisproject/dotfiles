@@ -6,7 +6,7 @@
 [merge]
 	conflictstyle = diff3
 [user]
-    name = t2sy
+	name = t2sy
 	email = japan.t.egawa@gmail.com
 [core]
 	editor = vim -c \"set fenc=utf-8\"

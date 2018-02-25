@@ -6,7 +6,7 @@
 echo "set completion-ignore-case on" > ~/.inputrc
 
 # ---------------------------
-# Basic aliases and functions
+# Load aliases and functions
 # ---------------------------
 if [ -e .http_status_alias.bash ]; then
     . .http_status_alias.bash
@@ -20,7 +20,9 @@ if [ -e .spark_hadoop_env.bash ]; then
     . .spark_hadoop_env.bash
 fi
 
-# Other alias
+# ---------------------------
+# Basic aliases and functions
+# ---------------------------
 alias findn='find . -name'
 alias diff='diff -u'
 alias df='df -Th'
@@ -31,7 +33,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 if [ $(uname) = "linux" ]; then
-    alias ls='ls --color=auto -AF'
+    alias ls='ls -aF --color=auto'
 else
     alias ls='ls -GAF'
 fi
