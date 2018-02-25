@@ -1,11 +1,13 @@
-# ----------------------
+# .bashrc
+
+# ---------------------------
 # Input
-# ----------------------
+# ---------------------------
 echo "set completion-ignore-case on" > ~/.inputrc
 
-# ----------------------
-# Load Alias
-# ----------------------
+# ---------------------------
+# Basic aliases and functions
+# ---------------------------
 if [ -e .http_status_alias.bash ]; then
     . .http_status_alias.bash
 fi
@@ -77,10 +79,9 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# ----------------------
+# -----------------------------
 # Terminal
-# ----------------------
-
+# -----------------------------
 # Check that terminfo exists before changing TERM var to xterm-256color
 # Prevents prompt flashing in Mac OS X 10.6 Terminal.app
 if [ -e /usr/share/terminfo/x/xterm-256color ]; then
@@ -193,9 +194,11 @@ PS1+="\$(prompt_git)" # Git details
 PS1+="\n" # Newline
 PS1+="${style_chars}\$ \[${RESET}\]" # $ (and reset color)
 
-# ----------------------
-# PATH
-# ----------------------
+# -----------------------------
+# Basic Environmental Variables
+# -----------------------------
+export HISTTIMEFORMAT='%F %T '
+export HISTSIZE=10000
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
 
@@ -240,5 +243,4 @@ fi
 # Node
 if [ -e ~/.nvm/nvm.sh ]; then
     source ~/.nvm/nvm.sh
-    nvm use 6.2.0
 fi
