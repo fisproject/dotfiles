@@ -204,9 +204,6 @@ export HISTSIZE=10000
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
 
-# Spark
-export PATH=/usr/local/share/spark/bin:$PATH
-
 # Cabal (building and packaging Haskell libraries and programs)
 export PATH=~/.cabal/bin:$PATH
 
