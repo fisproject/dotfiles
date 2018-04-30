@@ -13,8 +13,11 @@ export YARN_HOME=$HADOOP_HOME
 export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
 export HADOOP_OPTS="-Djava.library.path=$HADOOP_COMMON_LIB_NATIVE_DIR"
 
-export SPARK_DL_DIR=~/tmp/spark-2.3.0-bin-hadoop2.7
-ln -s $SPARK_DL_DIR /usr/local/share/spark
+export SPARK_DIR=spark-2.3.0-bin-hadoop2.7
+export SPARK_DL_PATH=~/tmp/$SPARK_DIR
+if [ ! -d /usr/local/share/spark/$SPARK_DIR ]; then
+    ln -s $SPARK_DL_PATH /usr/local/share/spark
+fi
 export SPARK_HOME=/usr/local/share/spark
 export PATH=$PATH:$SPARK_HOME/bin
 export PAHT=$PATH:$SPARK_HOME/sbin
