@@ -217,7 +217,7 @@ if [ `uname` = "Darwin" ]; then
     alias df='df -h'
     # for macOS
     export GOPATH=$HOME/dev
-    export GOROOT=/usr/local/Cellar/go/1.8.3/libexec
+    export GOROOT=/usr/local/Cellar/go/1.11/libexec
     export PATH=$PATH:$GOROOT/bin
     export PATH=$PATH:$GOPATH/bin
 elif [ -e /etc/debian_version ]; then
