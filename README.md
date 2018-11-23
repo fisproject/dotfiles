@@ -1,16 +1,20 @@
 dotfiles
-====
+---
 
 ## Overview
-- .bashrc
-- .gitconfig
-- .vimrc
-- .gitignore
-- .http_status_alias.bash
-- .git_alias.bash
-- .spark_hadoop_env.bash
+
+* Utility to install the following dot-files.
+  - .bashrc
+  - .gitconfig
+  - .vimrc
+  - .tmux.conf
+  - .gitignore
+  - .http_status_alias.bash
+  - .git_alias.bash
+  - .spark_hadoop_env.bash
 
 ## Install
+
 ```bash
 $ git clone https://github.com/fisproject/dotfiles
 $ cd dotfiles
