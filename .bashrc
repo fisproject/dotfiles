@@ -27,6 +27,7 @@ alias findn='find . -name'
 alias diff='diff -u'
 alias df='df -Th'
 alias py='python'
+alias t='trans -b'
 
 # Some more ls aliases
 alias ll='ls -alF'

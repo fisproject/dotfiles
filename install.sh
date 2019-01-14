@@ -12,7 +12,6 @@ fi
 for f in ${targets[*]}; do
   [[ "$f" == ".git" ]] && continue
   [[ "$f" == ".DS_Store" ]] && continue
-  [[ "$f" == ".gitconfig" ]] && continue
   [[ "$f" == ".bashrc_remote" ]] && continue
 
   if [ -f $HOME/$f ]; then

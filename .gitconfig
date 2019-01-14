@@ -1,18 +1,19 @@
+[include]
+    path = ~/.gitconfig_user
 [color]
-	ui = auto
-	diff = auto
-	status = auto
-	branch = auto
+    ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    grep = auto
 [merge]
-	conflictstyle = diff3
-[user]
-	name = t2sy
-	email = japan.t.egawa@gmail.com
+    conflictstyle = diff3
 [core]
-	editor = vim -c \"set fenc=utf-8\"
-	precomposeunicode = true
-	quotepath = false
+    editor = vim -c \"set fenc=utf-8\"
+    precomposeunicode = true
+    quotepath = false
 [alias]
-	co = checkout
-	cm = commit
-	st = status
+    co = checkout
+    cm = commit
+    st = status
