@@ -69,6 +69,26 @@ function peco-pkill() {
 }
 alias ppkill="peco-pkill"
 
+# Google search from terminal
+google() {
+    if [ $(echo $1 | egrep "^-[cfs]$") ]; then
+        local opt="$1"
+        shift
+    fi
+    local url="https://www.google.co.jp/search?q=${*// /+}"
+    local app="/Applications"
+    local g="${app}/Google Chrome.app"
+    local f="${app}/Firefox.app"
+    local s="${app}/Safari.app"
+    case ${opt} in
+        "-g") open "${url}" -a "$g";;
+        "-f") open "${url}" -a "$f";;
+        "-s") open "${url}" -a "$s";;
+        *) open "${url}";;
+    esac
+}
+alias ggl="google"
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -130,7 +150,7 @@ is_git_dir() {
     $(git rev-parse --is-inside-git-dir 2> /dev/null)
 }
 
-get_git_branch() {
+find_git_branch() {
     local branch_name
 
     # Get the short symbolic ref ( Old Linux )
@@ -153,7 +173,7 @@ prompt_git() {
         return 1
     fi
 
-    git_info=$(get_git_branch)
+    git_info=$(find_git_branch)
 
     # Check for uncommitted changes in the index
     # if ! $(git diff --quiet --ignore-submodules --cached); then
