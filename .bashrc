@@ -28,6 +28,7 @@ alias diff='diff -u'
 alias df='df -Th'
 alias py='python'
 alias t='trans -b'
+alias tj='trans -b -t en -s ja'
 
 # Some more ls aliases
 alias ll='ls -alF'
