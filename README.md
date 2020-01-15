@@ -1,5 +1,5 @@
 dotfiles
----
+===
 
 ## Overview
 
@@ -21,16 +21,19 @@ $ cd dotfiles
 $ ./install.sh
 ```
 
-* (Option) install plug-in for vim.
+* Optional: Install plug-in for vim with [vim-plug](https://github.com/junegunn/vim-plug).
 
 ```bash
-$ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 $ vim
-:PluginInstall
+:PlugInstall
 ```
 
 ## Licence
+
 [MIT](http://opensource.org/licenses/MIT)
 
 ## Author
+
 [t2sy](https://github.com/fisproject)
