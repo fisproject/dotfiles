@@ -21,7 +21,9 @@ $ cd dotfiles
 $ ./install.sh
 ```
 
-* Optional: Install plug-in for vim with [vim-plug](https://github.com/junegunn/vim-plug).
+### vim-plug
+
+* **Optional**: Install plug-in for vim with [vim-plug](https://github.com/junegunn/vim-plug).
 
 ```bash
 $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -29,6 +31,12 @@ $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 $ vim
 :PlugInstall
 ```
+
+### Language Server
+
+* **Optional**: Install [Language Server](https://langserver.org/) for each language.
+  - [bash-language-server](https://github.com/mads-hartmann/bash-language-server)
+  - [gopls](https://github.com/golang/tools/tree/master/gopls)
 
 ## Licence
 
