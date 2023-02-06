@@ -6,21 +6,6 @@
 echo "set completion-ignore-case on" > ~/.inputrc
 
 # ---------------------------
-# Load aliases and functions
-# ---------------------------
-if [ -e .http_status_alias.bash ]; then
-    . .http_status_alias.bash
-fi
-
-if [ -e .git_alias.bash ]; then
-    . .git_alias.bash
-fi
-
-if [ -e .spark_hadoop_env.bash ]; then
-    . .spark_hadoop_env.bash
-fi
-
-# ---------------------------
 # Basic aliases and functions
 # ---------------------------
 alias findn='find . -name'
@@ -40,60 +25,6 @@ else
     alias ls='ls -GAF'
 fi
 
-# Settings for peco
-peco-select-history() {
-    declare l=$(HISTTIMEFORMAT= history | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$READLINE_LINE")
-    READLINE_LINE="$l"
-    READLINE_POINT=${#l}
-    # for OSX
-    if [ `uname` = "Darwin" ]; then
-        echo ${READLINE_LINE} | pbcopy
-    fi
-}
-bind -x '"\C-r": peco-select-history'
-
-# peco + cd
-function peco-cd {
-    local dir="$( find . -maxdepth 1 -type d | sed -e 's;\./;;' | peco )"
-    if [ ! -z "$dir" ]; then
-        cd "$dir"
-    fi
-}
-alias pcd="peco-cd"
-
-# peco + pkill
-function peco-pkill() {
-    for pid in `ps aux | peco | awk '{ print $2 }'`; do
-        kill $pid
-        echo "Killed ${pid}"
-    done
-}
-alias ppkill="peco-pkill"
-
-# Google search from terminal
-google() {
-    if [ $(echo $1 | egrep "^-[cfs]$") ]; then
-        local opt="$1"
-        shift
-    fi
-    local url="https://www.google.co.jp/search?q=${*// /+}"
-    local app="/Applications"
-    local g="${app}/Google Chrome.app"
-    local f="${app}/Firefox.app"
-    local s="${app}/Safari.app"
-    case ${opt} in
-        "-g") open "${url}" -a "$g";;
-        "-f") open "${url}" -a "$f";;
-        "-s") open "${url}" -a "$s";;
-        *) open "${url}";;
-    esac
-}
-alias ggl="google"
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -102,6 +33,18 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+if [ -e ~/.http_status_alias.bash ]; then
+    . ~/.http_status_alias.bash
+fi
+
+if [ -e ~/.git_alias.bash ]; then
+    . ~/.git_alias.bash
+fi
+
+# if [ -e ~/.spark_hadoop_env.bash ]; then
+#     . ~/.spark_hadoop_env.bash
+# fi
 
 # -----------------------------
 # Terminal
@@ -223,16 +166,17 @@ PS1+="${style_chars}\$ \[${RESET}\]" # $ (and reset color)
 # -----------------------------
 export HISTTIMEFORMAT='%F %T '
 export HISTSIZE=10000
-export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
 
 # Cabal (building and packaging Haskell libraries and programs)
-export PATH=~/.cabal/bin:$PATH
+# export PATH=~/.cabal/bin:$PATH
 
 # Python
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PYENV_ROOT/bin:$PATH
-eval "$(pyenv init -)"
+# export PYENV_ROOT=$HOME/.pyenv
+# export PATH=$PYENV_ROOT/bin:$PATH
+# eval "$(pyenv init -)"
+# export PATH=$HOME/anaconda3/bin:$PATH
+export PATH=$HOME/.poetry/bin:$PATH
 
 # Golang
 if [ `uname` = "Darwin" ]; then
@@ -262,6 +206,4 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # Node
-if [ -e ~/.nvm/nvm.sh ]; then
-    source ~/.nvm/nvm.sh
-fi
+export PATH=$HOME/.nodebrew/current/bin:$PATH
