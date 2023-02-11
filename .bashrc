@@ -172,9 +172,9 @@ export PATH=/usr/local/bin:$PATH
 # export PATH=~/.cabal/bin:$PATH
 
 # Python
-# export PYENV_ROOT=$HOME/.pyenv
-# export PATH=$PYENV_ROOT/bin:$PATH
-# eval "$(pyenv init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 # export PATH=$HOME/anaconda3/bin:$PATH
 export PATH=$HOME/.poetry/bin:$PATH
 
